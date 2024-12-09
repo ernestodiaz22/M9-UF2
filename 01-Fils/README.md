@@ -21,12 +21,12 @@
 <ul>
     <li>
         Fil.java</br>
-        <img src="img/img4.png" alt="img4"></br>
+        <img src="img/img5.png" alt="img5"></br>
         Añado otro atributo al constructor de la clase Fil.java: el atributo prioridad, el cual utilizaré para cambiar la prioridad por defecto del hilo a la deseada con el método setPriority().
     </li>
     <li>
         Principal.java</br>
-        <img src="img/img5.png" alt="img5"></br>
+        <img src="img/img4.png" alt="img4"></br>
         En la clase principal, inicializo el hilo llamado pepe con mayor prioridad para que, de este modo, sus procesos terminen antes que los de Juan.
     </li>
     <li>
