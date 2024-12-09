@@ -15,7 +15,7 @@
         Salida</br>
         <img src="img/img3.png" alt="img3">
     </li>
-<ul>
+</ul>
 
 <h3>Pepe se ejecuta antes que Juan</h3>
 <ul>
@@ -33,7 +33,7 @@
         Salida</br>
         <img src="img/img6.png" alt="img6">
     </li>
-<ul>
+</ul>
 
 <h3>Pepe y Juan se ejecutan en un orden alterno y específico.</h3>
 <ul>
@@ -51,7 +51,7 @@
         Salida</br>
         <img src="img/img9.png" alt="img9">
     </li>
-<ul>
+</ul>
 
 
 
