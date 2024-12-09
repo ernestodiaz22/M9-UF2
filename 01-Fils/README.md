@@ -45,13 +45,11 @@
     <li>
         Principal.java</br>
         <img src="img/img8.png" alt="img8"></br>
-        ![alt text](<Captura de pantalla 2024-12-09 200322.png>)
         La clase Principal no sufre ningún cambio.
     </li>
     <li>
         Salida</br>
         <img src="img/img9.png" alt="img9">
-        ![alt text](<Captura de pantalla 2024-12-09 200241.png>)
     </li>
 <ul>
 
