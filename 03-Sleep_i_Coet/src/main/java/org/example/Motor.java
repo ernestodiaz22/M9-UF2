@@ -16,55 +16,37 @@ public class Motor extends Thread {
     public synchronized void setPotencia(int p) {
         this.potenciaobjectiu = p;
     }
-
     @Override
-    public void run() {
-        boolean enMarcha = true;
-
-        while (enMarcha) {
-
-            synchronized (this) {
-                while (potenciaActual == potenciaobjectiu) {
-                    try {
-                        wait(); // Espera hasta que haya un cambio en la potencia
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
+    public void run(){
+        while(true){
+            while(potenciaobjectiu != potenciaActual){
+                String movimiento = "";
+                try{
+                    sleep(random.nextInt(2000) + 1);
+                }catch (InterruptedException ie){
+                    ie.printStackTrace();
                 }
+                if (potenciaActual < potenciaobjectiu) {
+                    potenciaActual++;
+                    movimiento = "Incre.";
+                } else if (potenciaActual > potenciaobjectiu) {
+                    potenciaActual--;
+                    movimiento = "Decre.";
+                }
+
+                if(potenciaActual == potenciaobjectiu){
+                    movimiento = "FerRes";
+                }
+                System.out.printf("%s: %s Objectiu: %d Actual: %d\n", getName(), movimiento, potenciaobjectiu, potenciaActual);
             }
-
-            inicioMotores();
-
-            if(potenciaActual == 0 && potenciaobjectiu == 0){
-                enMarcha = false;
+            try{
+                sleep(random.nextInt(100));
+            }catch (InterruptedException ie){
+                ie.printStackTrace();
             }
-        }
-    }
-
-    private void inicioMotores() {
-        String movimiento = "FerRes";
-        int intervalo = random.nextInt(2000) + 1;
-
-        try {
-            Thread.sleep(intervalo); // Simula el tiempo necesario para ajustar la potencia
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        synchronized (this) {
-            if (potenciaActual < potenciaobjectiu) {
-                potenciaActual++;
-                movimiento = "Incre.";
-            } else if (potenciaActual > potenciaobjectiu) {
-                potenciaActual--;
-                movimiento = "Decre.";
+            if (potenciaActual == 0){
+                break;
             }
-
-            if(potenciaActual == potenciaobjectiu){
-                movimiento = "FerRes";
-            }
-            System.out.printf("%s: %s Objectiu: %d Actual: %d\n", getName(), movimiento, potenciaobjectiu, potenciaActual);
-            notify(); // notifica a los otros hilos
         }
     }
 }
