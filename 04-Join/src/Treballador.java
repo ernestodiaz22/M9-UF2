@@ -25,14 +25,28 @@ public class Treballador extends Thread{
     }
     //métodos
     public void cobrar(){
-
+        cobrat += sou_anual_btut / 12;
     }
     public void pagaImpostos(){
-
+        cobrat -= sou_anual_btut / 12 * 0.24f;
     }
     @Override
     public void run(){
-
+        int mesesTotales = edat_fi_treball * 12;
+        for(int i = 0; i < mesesTotales; i++){
+            if(i%12 == 0){
+                edat_actual++;
+            }
+            if(edat_actual > edat_inici_treball){
+                cobrar();
+                pagaImpostos();
+            }
+            try{
+                sleep(rnd.nextInt(101));
+            }catch (InterruptedException ie){
+                ie.printStackTrace();
+            }
+        }
     }
 
 }
