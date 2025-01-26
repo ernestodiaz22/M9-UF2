@@ -7,15 +7,16 @@ public class Administracio {
         }
         for (Treballador trabajador  : poblacio_activa){
             trabajador.start();
-            try{
-                trabajador.join();
-            }catch (InterruptedException ie){
-                ie.printStackTrace();
-            }
-            System.out.println( trabajador.getName() + " -> edat: "+trabajador.getEdat_actual()+"  total: " + trabajador.getCobrat());
         }
 
-
+        for(Treballador trabajador : poblacio_activa){
+            try{
+                trabajador.join();
+                System.out.println( trabajador.getName() + " -> edat: "+trabajador.getEdat_actual()+"  total: " + trabajador.getCobrat());
+            }catch(InterruptedException ie){
+                ie.printStackTrace();
+            }
+        }
     }
 
 }
