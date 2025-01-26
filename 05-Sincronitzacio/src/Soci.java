@@ -22,14 +22,16 @@ public class Soci extends Thread{
     @Override
     public void run(){
         for(int i = 0; i < maxAnys; i++){
-            for(int j = 1; j < 13; j++){
-                float saldo = 0;
-                if (j % 2 == 0){
-                    saldo = compte.getSaldo() + 10;
-                    compte.setSaldo(saldo);
-                }else{
-                    saldo = compte.getSaldo() - 10;
-                    compte.setSaldo(saldo);
+            for(int j = 0; j < 12; j++){
+                synchronized (compte){
+                    float saldo = 0f;
+                    if (j % 2 == 0){
+                        saldo = compte.getSaldo() + 10f;
+                        compte.setSaldo(saldo);
+                    }else{
+                        saldo = compte.getSaldo() - 10f;
+                        compte.setSaldo(saldo);
+                    }
                 }
                 try{
                     sleep(random.nextInt(101));
