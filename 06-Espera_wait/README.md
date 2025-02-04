@@ -9,8 +9,6 @@
 <img src="img/image3.png" alt="">
 <p>-Porcetanje 70%-30%</p></br>
 <img src="img/image5.png" alt=""></br>
-
-<img src="img/image5.png" alt="">
 <img src="img/image7.png" alt="">
 <img src="img/image6.png" alt="">
 <img src="img/image8.png" alt=""></br>
