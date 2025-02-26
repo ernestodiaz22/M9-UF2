@@ -21,7 +21,7 @@ public class Filosof  extends Thread{
         while(true){
 
                 boolean comer = true;
-
+                pensar();
                 if(!forquillaEsquerra.isEnUs()){
                     System.out.println("Filòsof:" + getName() + " agafa la forquilla esquerra "+ forquillaEsquerra.getNumero());
                 }else{
@@ -50,7 +50,6 @@ public class Filosof  extends Thread{
                     menjar();
                     System.out.println("Filòsof:" + getName() + " ha acabat de menjar");
                 }
-                pensar();
         }
     }
 
