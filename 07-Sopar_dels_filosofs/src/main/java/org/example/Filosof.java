@@ -19,10 +19,9 @@ public class Filosof  extends Thread{
     @Override
     public void run(){
         while(true){
-            if(rnd.nextInt(2) != 0){
 
                 boolean comer = true;
-
+                pensar();
                 if(!forquillaEsquerra.isEnUs()){
                     System.out.println("Filòsof:" + getName() + " agafa la forquilla esquerra "+ forquillaEsquerra.getNumero());
                 }else{
@@ -46,16 +45,13 @@ public class Filosof  extends Thread{
                         throw new RuntimeException(e);
                     }
                 }else{
-                    if(gana != 0){
-                        gana--;
-                    }
+
+                    gana=0;
+
                     System.out.println("Filòsof:" + getName() + " menja");
                     menjar();
                     System.out.println("Filòsof:" + getName() + " ha acabat de menjar");
                 }
-            }else{
-                pensar();
-            }
         }
     }
 
